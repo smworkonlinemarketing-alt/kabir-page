@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+
+  <!-- =========================
+       META PIXEL CODE
+       ========================= -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {
+      if(f.fbq)return;
+      n=f.fbq=function(){
+        n.callMethod ?
+        n.callMethod.apply(n,arguments) :
+        n.queue.push(arguments)
+      };
+
+      if(!f._fbq)f._fbq=n;
+
+      n.push=n;
+      n.loaded=!0;
+      n.version='2.0';
+      n.queue=[];
+
+      t=b.createElement(e);
+      t.async=!0;
+      t.src=v;
+
+      s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)
+    }(
+      window,
+      document,
+      'script',
+      'https://connect.facebook.net/en_US/fbevents.js'
+    );
+
+    fbq('init', '3246190765592161');
+    fbq('track', 'PageView');
+  </script>
+
+  <noscript>
+    <img
+      height="1"
+      width="1"
+      style="display:none"
+      src="https://www.facebook.com/tr?id=3246190765592161&ev=PageView&noscript=1"
+    />
+  </noscript>
+
+  <!-- =========================
+       TELEGRAM CLICK EVENT
+       ========================= -->
+
+  <script>
+
+    function trackTelegramClick(buttonLocation) {
+
+      if (typeof fbq === 'function') {
+
+        fbq(
+          'trackCustom',
+          'TelegramClick',
+          {
+            button_location: buttonLocation
+          }
+        );
+
+      }
+
+    }
+
+  </script>
+
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Sabbir Trader | Telegram Community</title>
+
+  <meta
+    name="description"
+    content="Join the Sabbir Trader Telegram community for regular updates, market information and useful content."
+  >
+
+
+  <!-- =========================
+       STYLE
+       ========================= -->
+
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+      color: #111827;
+      line-height: 1.6;
+    }
+
+
+    .container {
+      width: 92%;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+
+    /* =========================
+       HEADER
+       ========================= */
+
+    header {
+      background: #ffffff;
+      padding: 18px 0;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      color: #111827;
+    }
+
+
+    .nav-button {
+      display: inline-block;
+      text-decoration: none;
+      background: #229ed9;
+      color: #ffffff;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-weight: 700;
+      transition: 0.2s;
+    }
+
+
+    .nav-button:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+
+
+    /* =========================
+       HERO
+       ========================= */
+
+    .hero {
+      padding: 85px 0;
+      text-align: center;
+      background:
+        linear-gradient(
+          135deg,
+          #eef6ff,
+          #ffffff
+        );
+    }
+
+
+    .hero-badge {
+      display: inline-block;
+      background: #e0f2fe;
+      color: #0369a1;
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+
+    .hero h1 {
+      font-size: 48px;
+      line-height: 1.15;
+      max-width: 850px;
+      margin: 0 auto 22px;
+      color: #111827;
+    }
+
+
+    .hero h1 span {
+      color: #229ed9;
+    }
+
+
+    .hero p {
+      max-width: 720px;
+      margin: 0 auto 32px;
+      font-size: 19px;
+      color: #4b5563;
+    }
+
+
+    .cta {
+      display: inline-block;
+      text-decoration: none;
+      background: #229ed9;
+      color: #ffffff;
+      padding: 16px 32px;
+      border-radius: 10px;
+      font-size: 18px;
+      font-weight: 800;
+      box-shadow:
+        0 8px 20px
+        rgba(34,158,217,0.25);
+      transition: 0.2s;
+    }
+
+
+    .cta:hover {
+      opacity: 0.92;
+      transform: translateY(-2px);
+    }
+
+
+    .small-text {
+      margin-top: 14px;
+      font-size: 13px;
+      color: #6b7280;
+    }
+
+
+    /* =========================
+       FEATURES
+       ========================= */
+
+    .features {
+      padding: 75px 0;
+      background: #ffffff;
+    }
+
+
+    .section-title {
+      text-align: center;
+      font-size: 34px;
+      margin-bottom: 42px;
+      color: #111827;
+    }
+
+
+    .section-subtitle {
+      text-align: center;
+      max-width: 650px;
+      margin: -25px auto 40px;
+      color: #6b7280;
+    }
+
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns:
+        repeat(3, 1fr);
+      gap: 22px;
+    }
+
+
+    .feature {
+      padding: 32px 25px;
+      background: #f8fafc;
+      border-radius: 14px;
+      border: 1px solid #e5e7eb;
+      text-align: center;
+      transition: 0.2s;
+    }
+
+
+    .feature:hover {
+      transform: translateY(-3px);
+      box-shadow:
+        0 10px 25px
+        rgba(0,0,0,0.06);
+    }
+
+
+    .feature-icon {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+
+    .feature h3 {
+      margin-bottom: 10px;
+      font-size: 21px;
+      color: #111827;
+    }
+
+
+    .feature p {
+      color: #6b7280;
+    }
+
+
+    /* =========================
+       WHY TELEGRAM
+       ========================= */
+
+    .community {
+      padding: 75px 0;
+      background: #f5f7fb;
+      text-align: center;
+    }
+
+
+    .community-box {
+      max-width: 850px;
+      margin: auto;
+      background: #ffffff;
+      padding: 45px 30px;
+      border-radius: 18px;
+      border: 1px solid #e5e7eb;
+      box-shadow:
+        0 10px 30px
+        rgba(0,0,0,0.05);
+    }
+
+
+    .community-box h2 {
+      font-size: 34px;
+      margin-bottom: 18px;
+    }
+
+
+    .community-box p {
+      max-width: 680px;
+      margin: 0 auto 28px;
+      color: #6b7280;
+      font-size: 17px;
+    }
+
+
+    /* =========================
+       FINAL CTA
+       ========================= */
+
+    .final-cta {
+      padding: 85px 0;
+      text-align: center;
+      background: #111827;
+      color: #ffffff;
+    }
+
+
+    .final-cta h2 {
+      font-size: 38px;
+      margin-bottom: 15px;
+    }
+
+
+    .final-cta p {
+      max-width: 650px;
+      margin: 0 auto 30px;
+      color: #d1d5db;
+      font-size: 17px;
+    }
+
+
+    /* =========================
+       FOOTER
+       ========================= */
+
+    footer {
+      background: #0b1120;
+      color: #9ca3af;
+      text-align: center;
+      padding: 25px;
+      font-size: 14px;
+    }
+
+
+    /* =========================
+       MOBILE
+       ========================= */
+
+    @media (max-width: 768px) {
+
+      .hero {
+        padding: 60px 0;
+      }
+
+
+      .hero h1 {
+        font-size: 36px;
+      }
+
+
+      .hero p {
+        font-size: 17px;
+      }
+
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+
+      .section-title {
+        font-size: 29px;
+      }
+
+
+      .community-box h2 {
+        font-size: 29px;
+      }
+
+
+      .final-cta h2 {
+        font-size: 30px;
+      }
+
+
+      .nav-button {
+        padding: 8px 13px;
+        font-size: 14px;
+      }
+
+
+      .logo {
+        font-size: 20px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =========================
+       HEADER
+       ========================= -->
+
+  <header>
+
+    <div class="container nav">
+
+      <div class="logo">
+        Sabbir Trader
+      </div>
+
+
+      <a
+        class="nav-button"
+        href="https://t.me/bigtimbissk11"
+        target="_blank"
+        rel="noopener"
+        onclick="trackTelegramClick('header')"
+      >
+        Join Telegram
+      </a>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- =========================
+       HERO
+       ========================= -->
+
+  <section class="hero">
+
+    <div class="container">
+
+      <div class="hero-badge">
+        📢 আমাদের Telegram Community
+      </div>
+
+
+      <h1>
+        গুরুত্বপূর্ণ আপডেট ও তথ্য
+        <span>এক জায়গায়</span>
+      </h1>
+
+
+      <p>
+        নিয়মিত আপডেট, গুরুত্বপূর্ণ তথ্য এবং
+        দরকারি কনটেন্ট পেতে আমাদের Telegram
+        Community-তে যুক্ত থাকুন।
+      </p>
+
+
+      <a
+        class="cta"
+        href="https://t.me/bigtimbissk11"
+        target="_blank"
+        rel="noopener"
+        onclick="trackTelegramClick('hero')"
+      >
+        🚀 Telegram-এ Join করুন
+      </a>
+
+
+      <div class="small-text">
+        মাত্র এক ক্লিকেই আমাদের Telegram Community-তে যুক্ত হতে পারবেন।
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       FEATURES
+       ========================= -->
+
+  <section class="features">
+
+    <div class="container">
+
+      <h2 class="section-title">
+        কেন আমাদের Telegram Community-তে যুক্ত হবেন?
+      </h2>
+
+
+      <p class="section-subtitle">
+        প্রয়োজনীয় তথ্য ও আপডেট সহজভাবে পেতে
+        আমাদের সঙ্গে যুক্ত থাকুন।
+      </p>
+
+
+      <div class="feature-grid">
+
+
+        <div class="feature">
+
+          <div class="feature-icon">
+            📢
+          </div>
+
+          <h3>
+            নিয়মিত আপডেট
+          </h3>
+
+          <p>
+            গুরুত্বপূর্ণ তথ্য ও নতুন আপডেট
+            নিয়মিতভাবে পেতে পারবেন।
+          </p>
+
+        </div>
+
+
+
+        <div class="feature">
+
+          <div class="feature-icon">
+            ⚡
+          </div>
+
+          <h3>
+            দ্রুত তথ্য
+          </h3>
+
+          <p>
+            প্রয়োজনীয় তথ্য ও নোটিফিকেশন
+            সরাসরি আপনার Telegram-এ পেতে পারবেন।
+          </p>
+
+        </div>
+
+
+
+        <div class="feature">
+
+          <div class="feature-icon">
+            👥
+          </div>
+
+          <h3>
+            Community
+          </h3>
+
+          <p>
+            আমাদের Telegram Community-তে
+            অন্যান্য সদস্যদের সাথেও যুক্ত থাকতে পারবেন।
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       COMMUNITY SECTION
+       ========================= -->
+
+  <section class="community">
+
+    <div class="container">
+
+      <div class="community-box">
+
+        <h2>
+          Telegram-এ আমাদের সাথে যুক্ত থাকুন
+        </h2>
+
+
+        <p>
+          আপনি যদি নিয়মিত আপডেট, গুরুত্বপূর্ণ তথ্য
+          এবং আমাদের নতুন কনটেন্ট পেতে চান,
+          তাহলে এখনই Telegram Community-তে যুক্ত হতে পারেন।
+        </p>
+
+
+        <a
+          class="cta"
+          href="https://t.me/bigtimbissk11"
+          target="_blank"
+          rel="noopener"
+          onclick="trackTelegramClick('community')"
+        >
+          📲 এখনই Telegram-এ যুক্ত হন
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       FINAL CTA
+       ========================= -->
+
+  <section class="final-cta">
+
+    <div class="container">
+
+      <h2>
+        আমাদের Telegram Community-তে যুক্ত হতে প্রস্তুত?
+      </h2>
+
+
+      <p>
+        নিচের button-এ ক্লিক করুন এবং সরাসরি
+        আমাদের Telegram Community-তে চলে যান।
+      </p>
+
+
+      <a
+        class="cta"
+        href="https://t.me/bigtimbissk11"
+        target="_blank"
+        rel="noopener"
+        onclick="trackTelegramClick('final')"
+      >
+        🚀 Join Telegram Now
+      </a>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       FOOTER
+       ========================= -->
+
+  <footer>
+
+    © 2026 Sabbir Trader.
+    All Rights Reserved.
+
+  </footer>
+
+
+</body>
+
+</html>
