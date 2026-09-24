@@ -53,26 +53,33 @@
        TELEGRAM CLICK EVENT
        ========================= -->
 
-  <script>
+ <script>
+  function trackTelegramClick(buttonLocation) {
 
-    function trackTelegramClick(buttonLocation) {
+    if (typeof fbq === 'function') {
 
-      if (typeof fbq === 'function') {
+      // Telegram Click Event
+      fbq(
+        'trackCustom',
+        'TelegramClick',
+        {
+          button_location: buttonLocation
+        }
+      );
 
-        fbq(
-          'trackCustom',
-          'TelegramClick',
-          {
-            button_location: buttonLocation
-          }
-        );
-
-      }
+      // Subscribe Event
+      fbq(
+        'track',
+        'Subscribe',
+        {
+          button_location: buttonLocation
+        }
+      );
 
     }
 
-  </script>
-
+  }
+</script>
 
   <meta charset="UTF-8">
 
