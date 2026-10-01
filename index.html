@@ -3,14 +3,39 @@
 
 <head>
 
-  <!-- =========================
-       META PIXEL CODE
-       ========================= -->
+  <!-- =====================================================
+       META PIXEL CONFIGURATION
+       
+       এখানে আপনার সব Meta Pixel ID রাখুন।
+       
+       নতুন Pixel যোগ করতে শুধু নিচের তালিকায় নতুন ID যোগ করবেন।
+       
+       উদাহরণ:
+       const META_PIXEL_IDS = [
+         '1685237866370482',
+         '2245030599390102',
+         'নতুন_PIXEL_ID'
+       ];
+       ===================================================== -->
+
   <script>
+
+    const META_PIXEL_IDS = [
+      '1685237866370482',   // পুরোনো / বর্তমান Pixel
+      '2245030599390102'    // নতুন Pixel
+    ];
+
+
+    /* =====================================================
+       META PIXEL BASE CODE
+       ===================================================== */
+
     !function(f,b,e,v,n,t,s)
     {
       if(f.fbq)return;
-      n=f.fbq=function(){
+
+      n=f.fbq=function()
+      {
         n.callMethod ?
         n.callMethod.apply(n,arguments) :
         n.queue.push(arguments)
@@ -29,6 +54,7 @@
 
       s=b.getElementsByTagName(e)[0];
       s.parentNode.insertBefore(t,s)
+
     }(
       window,
       document,
@@ -36,50 +62,117 @@
       'https://connect.facebook.net/en_US/fbevents.js'
     );
 
-    fbq('init', '1685237866370482');
+
+    /* =====================================================
+       INITIALIZE ALL PIXELS
+       
+       META_PIXEL_IDS-এর তালিকায় যতগুলো Pixel থাকবে,
+       সবগুলোতে একই Event পাঠানো হবে।
+       ===================================================== */
+
+    META_PIXEL_IDS.forEach(function(pixelId)
+    {
+      fbq('init', pixelId);
+    });
+
+
+    /* =====================================================
+       PAGE VIEW EVENT
+       
+       এই PageView Event সব Pixel-এ যাবে।
+       ===================================================== */
+
     fbq('track', 'PageView');
+
   </script>
 
+
+  <!-- =====================================================
+       NOSCRIPT PAGEVIEW
+       
+       JavaScript বন্ধ থাকলেও PageView পাঠানোর জন্য।
+       
+       ভবিষ্যতে নতুন Pixel যোগ করলে এখানে নতুন <img>
+       যোগ করতে হবে।
+       ===================================================== -->
+
   <noscript>
+
+    <!-- পুরোনো Pixel -->
     <img
       height="1"
       width="1"
       style="display:none"
       src="https://www.facebook.com/tr?id=1685237866370482&ev=PageView&noscript=1"
     />
+
+    <!-- নতুন Pixel -->
+    <img
+      height="1"
+      width="1"
+      style="display:none"
+      src="https://www.facebook.com/tr?id=2245030599390102&ev=PageView&noscript=1"
+    />
+
   </noscript>
 
-  <!-- =========================
-       TELEGRAM CLICK EVENT
-       ========================= -->
 
- <script>
-  function trackTelegramClick(buttonLocation) {
+  <!-- =====================================================
+       TELEGRAM CLICK + SUBSCRIBE EVENTS
+       
+       এই function যেকোনো Telegram button click করলে
+       দুই Pixel-এই Event পাঠাবে।
+       ===================================================== -->
 
-    if (typeof fbq === 'function') {
+  <script>
 
-      // Telegram Click Event
-      fbq(
-        'trackCustom',
-        'TelegramClick',
-        {
-          button_location: buttonLocation
-        }
-      );
+    function trackTelegramClick(buttonLocation)
+    {
 
-      // Subscribe Event
-      fbq(
-        'track',
-        'Subscribe',
-        {
-          button_location: buttonLocation
-        }
-      );
+      if (typeof fbq === 'function')
+      {
+
+        /* =================================================
+           TELEGRAM CLICK EVENT
+
+           Event name:
+           TelegramClick
+
+           এটি সব initialized Pixel-এ যাবে।
+           ================================================= */
+
+        fbq(
+          'trackCustom',
+          'TelegramClick',
+          {
+            button_location: buttonLocation
+          }
+        );
+
+
+        /* =================================================
+           SUBSCRIBE EVENT
+
+           Event name:
+           Subscribe
+
+           এটিও সব initialized Pixel-এ যাবে।
+           ================================================= */
+
+        fbq(
+          'track',
+          'Subscribe',
+          {
+            button_location: buttonLocation
+          }
+        );
+
+      }
 
     }
 
-  }
-</script>
+  </script>
+
 
   <meta charset="UTF-8">
 
@@ -96,9 +189,9 @@
   >
 
 
-  <!-- =========================
+  <!-- =====================================================
        STYLE
-       ========================= -->
+       ===================================================== -->
 
   <style>
 
@@ -451,13 +544,13 @@
 
 </head>
 
-  
+
 <body>
 
 
-  <!-- =========================
+  <!-- =====================================================
        HEADER
-       ========================= -->
+       ===================================================== -->
 
   <header>
 
@@ -484,9 +577,9 @@
 
 
 
-  <!-- =========================
+  <!-- =====================================================
        HERO
-       ========================= -->
+       ===================================================== -->
 
   <section class="hero">
 
@@ -531,9 +624,9 @@
 
 
 
-  <!-- =========================
+  <!-- =====================================================
        FEATURES
-       ========================= -->
+       ===================================================== -->
 
   <section class="features">
 
@@ -617,9 +710,9 @@
 
 
 
-  <!-- =========================
+  <!-- =====================================================
        COMMUNITY SECTION
-       ========================= -->
+       ===================================================== -->
 
   <section class="community">
 
@@ -657,9 +750,9 @@
 
 
 
-  <!-- =========================
+  <!-- =====================================================
        FINAL CTA
-       ========================= -->
+       ===================================================== -->
 
   <section class="final-cta">
 
@@ -692,9 +785,9 @@
 
 
 
-  <!-- =========================
+  <!-- =====================================================
        FOOTER
-       ========================= -->
+       ===================================================== -->
 
   <footer>
 
